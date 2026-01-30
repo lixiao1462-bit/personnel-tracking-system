@@ -2,6 +2,12 @@
 
 基于YOLO + TensorRT + GPU加速的工厂人员实时定位与安全监控系统。
 
+## 平台支持
+
+- ✅ **Linux** (推荐用于生产环境)
+- ✅ **Windows 11** (支持开发和测试) - [查看 Windows 安装指南](./WINDOWS_SETUP.md)
+- ✅ **macOS** (支持开发和测试)
+
 ## 技术架构
 
 ### 前端
@@ -91,6 +97,18 @@ kf/
 ```
 
 ## 快速开始
+
+### Windows 用户
+
+如果您使用 Windows 11，请查看 [💻 Windows 安装指南](./WINDOWS_SETUP.md) 获取详细的安装和配置指导。
+
+**快速启动** (双击运行):
+- `start-windows.bat` - 批处理脚本（推荐新手）
+- `start-windows.ps1` - PowerShell 脚本
+
+---
+
+### Linux/macOS 用户
 
 ### 1. 数据库部署（必选）
 
