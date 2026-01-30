@@ -1,0 +1,203 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* 自定义字体 */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-display: "Orbitron", "Inter", sans-serif;
+}
+
+:root {
+  /* 默认深色模式 (Industrial Cyberpunk) */
+  --background: oklch(0.13 0.02 260); /* 深空灰 */
+  --foreground: oklch(0.98 0 0); /* 纯白 */
+  
+  --card: oklch(0.17 0.02 260); /* 稍浅的灰色 */
+  --card-foreground: oklch(0.98 0 0);
+  
+  --popover: oklch(0.17 0.02 260);
+  --popover-foreground: oklch(0.98 0 0);
+  
+  --primary: oklch(0.6 0.18 250); /* 霓虹蓝 */
+  --primary-foreground: oklch(0.98 0 0);
+  
+  --secondary: oklch(0.25 0.02 260);
+  --secondary-foreground: oklch(0.98 0 0);
+  
+  --muted: oklch(0.25 0.02 260);
+  --muted-foreground: oklch(0.7 0.02 260);
+  
+  --accent: oklch(0.25 0.02 260);
+  --accent-foreground: oklch(0.98 0 0);
+  
+  --destructive: oklch(0.6 0.2 20); /* 霓虹红 */
+  --destructive-foreground: oklch(0.98 0 0);
+  
+  --border: oklch(0.3 0.02 260);
+  --input: oklch(0.3 0.02 260);
+  --ring: oklch(0.6 0.18 250);
+  
+  --radius: 0.5rem;
+  
+  --sidebar: oklch(0.11 0.02 260); /* 更深的侧边栏 */
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.6 0.18 250);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.2 0.02 260);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.2 0.02 260);
+  --sidebar-ring: oklch(0.6 0.18 250);
+  
+  /* 图表颜色 */
+  --chart-1: oklch(0.6 0.18 250); /* 蓝 */
+  --chart-2: oklch(0.6 0.2 20);   /* 红 */
+  --chart-3: oklch(0.7 0.15 150); /* 绿 */
+  --chart-4: oklch(0.7 0.15 60);  /* 黄 */
+  --chart-5: oklch(0.6 0.15 300); /* 紫 */
+}
+
+.light {
+  /* 浅色模式 (备用，保持高对比度) */
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.13 0.02 260);
+  
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0.02 260);
+  
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0.02 260);
+  
+  --primary: oklch(0.5 0.18 250);
+  --primary-foreground: oklch(0.98 0 0);
+  
+  --secondary: oklch(0.95 0.01 260);
+  --secondary-foreground: oklch(0.13 0.02 260);
+  
+  --muted: oklch(0.95 0.01 260);
+  --muted-foreground: oklch(0.5 0.02 260);
+  
+  --accent: oklch(0.95 0.01 260);
+  --accent-foreground: oklch(0.13 0.02 260);
+  
+  --destructive: oklch(0.6 0.2 20);
+  --destructive-foreground: oklch(0.98 0 0);
+  
+  --border: oklch(0.9 0.01 260);
+  --input: oklch(0.9 0.01 260);
+  --ring: oklch(0.5 0.18 250);
+  
+  --sidebar: oklch(0.95 0.01 260);
+  --sidebar-foreground: oklch(0.13 0.02 260);
+  --sidebar-primary: oklch(0.5 0.18 250);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.9 0.01 260);
+  --sidebar-accent-foreground: oklch(0.13 0.02 260);
+  --sidebar-border: oklch(0.9 0.01 260);
+  --sidebar-ring: oklch(0.5 0.18 250);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+  
+  /* 玻璃拟态效果 */
+  .glass {
+    @apply bg-background/60 backdrop-blur-md border border-white/10;
+  }
+  
+  /* 霓虹发光效果 */
+  .neon-blue {
+    box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+  }
+  .neon-red {
+    box-shadow: 0 0 10px var(--destructive), 0 0 20px var(--destructive);
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+}
